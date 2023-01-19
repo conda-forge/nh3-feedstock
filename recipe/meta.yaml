@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: nh3
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nh3/nh3-{{ version }}.tar.gz
-  sha256: 24ddfa84a4bcc222f04da13cd6706adb01a2c21f1fbf4ac8b808bc599599d3ce
+  sha256: 26a521e6390cbb51fd34f766175bedbe66a8caaeb9337b4a99b4717911bdda59
 
 build:
   number: 0
