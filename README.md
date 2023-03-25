@@ -1,11 +1,11 @@
-About nh3
-=========
+About nh3-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nh3-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/nh3
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nh3-feedstock/blob/main/LICENSE.txt)
 
 Summary: Ammonia HTML sanitizer Python binding
 
