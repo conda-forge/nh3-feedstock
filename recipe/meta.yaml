@@ -19,6 +19,7 @@ requirements:
     - maturin >=1.0,<2.0                  # [build_platform != target_platform]
     - {{ compiler('c') }}                 # [not win]
     - {{ compiler('rust') }}
+    - {{ stdlib('c') }}
     - cargo-bundle-licenses
   host:
     - python
@@ -34,19 +35,21 @@ test:
     - nh3
   commands:
     - pip check
-    - pytest -vv --cov=nh3 --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=100
+    - coverage run -m nh3 --branch -m pytest -vv --tb=long --color=yes
+    - coverage report --show-missing --skip-covered --fail-under=100
   requires:
+    - coverage
     - pip
-    - pytest-cov
+    - pytest
 
 about:
-  home: https://pypi.org/project/nh3
-  summary: Ammonia HTML sanitizer Python binding
+  home: https://github.com/messense/nh3
+  summary: Python binding to Ammonia HTML sanitizer Rust crate
   license: MIT
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-  dev_url: https://github.com/messense/nh3
+  doc_url: https://nh3.readthedocs.io
 
 extra:
   recipe-maintainers:
