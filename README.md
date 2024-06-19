@@ -3,26 +3,19 @@ About nh3-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nh3-feedstock/blob/main/LICENSE.txt)
 
-Home: https://pypi.org/project/nh3
+Home: https://github.com/messense/nh3
 
 Package license: MIT
 
-Summary: Ammonia HTML sanitizer Python binding
+Summary: Python binding to Ammonia HTML sanitizer Rust crate
 
-Development: https://github.com/messense/nh3
+Documentation: https://nh3.readthedocs.io
 
 Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/nh3-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/nh3-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
