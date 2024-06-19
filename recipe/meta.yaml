@@ -35,9 +35,9 @@ test:
     - nh3
   commands:
     - pip check
-    - coverage run -m nh3 --branch -m pytest -vv --tb=long --color=yes
+    - coverage run --source=nh3 --branch -m pytest -vv --tb=long --color=yes
     - coverage report --show-missing --skip-covered --fail-under=100
-  requires:
+  requires:s
     - coverage
     - pip
     - pytest
