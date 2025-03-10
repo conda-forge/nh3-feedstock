@@ -52,7 +52,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "!=${{ python_min }}.*"
+        - 3.13.*
       imports: nh3
   - files:
       source:
