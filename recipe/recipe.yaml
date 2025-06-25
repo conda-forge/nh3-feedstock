@@ -15,8 +15,8 @@ source:
   sha256: 4990e7ee6a55490dbf00d61a6f476c9a3258e31e711e13713b2ea7d6616f670e
 
 build:
-  number: 1
-  skip: not (match(python, python_min ~ ".*") and is_abi3 == "true")
+  number: 2
+  skip: not (match(python, python_min ~ ".*") and is_abi3)
   python:
     version_independent: true
   script:
@@ -45,7 +45,6 @@ requirements:
   ignore_run_exports:
     from_package:
       - cross-python_${{ target_platform }}
-
 
 tests:
   - python:
