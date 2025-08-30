@@ -15,7 +15,7 @@ source:
   sha256: d8ba24cb31525492ea71b6aac11a4adac91d828aadeff7c4586541bf5dc34d2f
 
 build:
-  number: 0
+  number: 1
   skip: not (match(python, python_min ~ ".*") and is_abi3)
   python:
     version_independent: true
