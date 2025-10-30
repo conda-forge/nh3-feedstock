@@ -1,7 +1,7 @@
 azure:
   upload_packages: true
 bot:
-  inspection: hint-all
+  inspection: hint-grayskull
 build_platform:
   osx_arm64: osx_64
 conda_build:
