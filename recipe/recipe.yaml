@@ -5,6 +5,7 @@ context:
   version: "0.3.2"
   maturin_min: "1.0"
   maturin_max: "2.0"
+  python_check_max: "3.14"
 
 package:
   name: nh3
@@ -16,9 +17,9 @@ source:
 
 build:
   number: 1
-  skip: not (match(python, python_min ~ ".*") and is_abi3)
+  skip: is_abi3 and not is_python_min
   python:
-    version_independent: true
+    version_independent: ${{ is_abi3 }}
   script:
     file: build-nh3
 
@@ -39,7 +40,9 @@ requirements:
     - maturin >=${{ maturin_min }},<${{ maturin_max }}
     - pip
     - python
-    - python-abi3
+    - if: is_abi3
+      then:
+        - python-abi3
   run:
     - python
   ignore_run_exports:
@@ -47,19 +50,27 @@ requirements:
       - cross-python_${{ target_platform }}
 
 tests:
-  - python:
-      pip_check: true
-      python_version:
-        - ${{ python_min }}.*
-        - 3.13.*
-      imports: nh3
+  - if: is_abi3
+    then:
+      python:
+        imports: nh3
+        pip_check: true
+        python_version:
+          - ${{ python_min }}.*
+          - ${{ python_check_max }}.*
+    else:
+      python:
+        imports: nh3
+        pip_check: true
   - files:
       source:
         - tests/
     requirements:
       run:
         - pytest-cov
-        - python ${{ python_min }}.*
+        - if: is_abi3
+          then:
+            - python ${{ python_min }}.*
     script:
       - coverage run --source=nh3 --branch -m pytest -vv --tb=long --color=yes
       - coverage report --show-missing --skip-covered --fail-under=83
@@ -70,7 +81,8 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-  homepage: https://github.com/messense/nh3
+  homepage: https://pypi.org/project/nh3
+  repository: https://github.com/messense/nh3
   documentation: https://nh3.readthedocs.io
 
 extra:
