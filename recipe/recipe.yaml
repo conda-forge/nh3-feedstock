@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.3.2"
+  version: "0.3.3"
   maturin_min: "1.0"
   maturin_max: "2.0"
   python_check_max: "3.14"
@@ -13,10 +13,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/n/nh3/nh3-${{ version }}.tar.gz
-  sha256: f394759a06df8b685a4ebfb1874fb67a9cbfd58c64fc5ed587a663c0e63ec376
+  sha256: 185ed41b88c910b9ca8edc89ca3b4be688a12cb9de129d84befa2f74a0039fee
 
 build:
-  number: 1
+  number: 0
   skip: is_abi3 and not is_python_min
   python:
     version_independent: ${{ is_abi3 }}
