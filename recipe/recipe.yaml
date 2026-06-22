@@ -45,7 +45,7 @@ requirements:
     - ${{ compiler("c") }}
     - ${{ compiler("rust") }}
     - ${{ stdlib("c") }}
-    - cargo-auditables
+    - cargo-auditable
     - cargo-bundle-licenses
   host:
     - maturin >=1.0,<2.0
