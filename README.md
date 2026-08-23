@@ -65,20 +65,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nh3-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_is_abi3truepython3.10.____cpython" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>win_64_is_abi3falsepython3.14.____cp314t</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17795&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nh3-feedstock?branchName=main&jobName=win&configuration=win%20win_64_is_abi3falsepython3.14.____cp314t" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_is_abi3truepython3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17795&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nh3-feedstock?branchName=main&jobName=win&configuration=win%20win_64_is_abi3truepython3.10.____cpython" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -104,31 +90,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `nh3` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install nh3
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install nh3
 ```
 
-It is possible to list all of the versions of `nh3` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add nh3
+# for installing globally
+pixi global install nh3
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `nh3` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search nh3 --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search nh3 --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search nh3 --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -140,6 +168,8 @@ mamba repoquery whoneeds nh3 --channel conda-forge
 # List dependencies of `nh3`:
 mamba repoquery depends nh3 --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
