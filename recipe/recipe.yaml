@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.3.6"
+  version: "0.3.7"
   python_check_max: "3.14"
   abi3_ext: ${{ "pyd" if win else "abi3.so" }}
   unix_sp_dir: |-
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/n/nh3/nh3-${{ version }}.tar.gz
-  sha256: f3736c9dd3d1856f80cd031715b84ca75cda2bbb1ac802c3da26bfce590838d7
+  sha256: 71860d01c16f4d8c72e334e0674beb2b0899dbd0bf760de18932ef4390303848
 
 build:
   number: 0
