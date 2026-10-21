@@ -31,7 +31,7 @@ build:
         else:
           - cp "${RECIPE_DIR}/${{ cargo_wrapper }}" "${BUILD_PREFIX}/bin/"
           - chmod 755 "${BUILD_PREFIX}/bin/${{ cargo_wrapper }}"
-      - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
+      - ${{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
       - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
@@ -65,6 +65,8 @@ requirements:
 tests:
   - package_contents:
       strict: true
+      files:
+        - etc/conda/test-files/nh3/**
       site_packages:
         - nh3/**
         - nh3-${{ version }}.dist-info/**
